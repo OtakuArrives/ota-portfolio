@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ota</title>
+    <link rel="stylesheet" href="PORTFOLIO.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("visible");
+    });
+});
+
+    </script> 
+<!--HEADING AND NAVI BUTTONS-->
+<header>
+    <nav>
+        <a href="#" class="headbutton"><h1>Ota</h1></a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="#"> Home </a></li>
+            <li><a href="works.html"> Works </a></li>
+            <li><a href="#about"> About Me </a></li>
+            <li><a href="contact.html"> Contact </a></li>
+        </ul>
+    </nav>
+</header>
+
+<!--MARQUEE GALLERY-->
+<div class="gallery-container">
+    <div class="gallery">
+        <div class="gallery-track">
+        <img src="images/works/graphic/DAWG Productions.png" alt="Photo 1">
+        <img src="images/works/photos/Split.jpg" alt="Photo 2">
+        <img src="images/works/photos/Bird.png" alt="Photo 3">
+        <img src="images/works/graphic/Suisei.png" alt="Photo 4">
+        <img src="images/works/graphic/cover.png" alt="Photo 5">
+        <!--DUPLICATE FOR LOOP CHUCHU-->
+        <img src="images/works/graphic/DAWG Productions.png" alt="Photo 1">
+        <img src="images/works/photos/Split.jpg" alt="Photo 2">
+        <img src="images/works/photos/Bird.png" alt="Photo 3">
+        <img src="images/works/graphic/Suisei.png" alt="Photo 4">
+        <img src="images/works/graphic/cover.png" alt="Photo 5">
+        </div>
+    </div>
+</div>
+
+
+<!--ABOUT ME SECTION-->
+<section id="about">
+    <h1 class="mainhead"> About Me</h1> <br>
+    <div class="hello">
+        <h2> Hi! I'm Ota!</h2><br>
+
+        <!-- DIV SLIDER CHUCHU -->
+        <div class="div-slider">
+            <div class="div-slide">
+                <p> My name is Charles Marco Hernandez, also known as Ota. <br>
+                    Swaying wherever the world takes me, 
+                    with my art, one step at a time. 
+                </p> <br>
+
+                <p class=""> Why not make me a part of your adventures? </p> <br>
+                <div class="contactbutton"><a href="contact.html" class="contactbtn"> Hire Me </a> </div>
+            </div>
+
+            <div class="div-slide">
+                <h2> I am a</h2> <br>
+                <ul class="iam">
+                    <li>
+                        Photographer.
+                    </li>
+                    
+                    <li>
+                        Filmmaker.
+                    </li>
+                    
+                    <li> 
+                        Graphic Designer.
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="div-slide">
+                <h2> I'm knowledgeable in</h2> <br>
+                <ul class="skill">
+                    <li> 
+                        Adobe Photoshop
+                        <img src="images/photoshoplogo.png"> 
+                    </li>
+                    
+                    <li> 
+                        Adobe Lightroom
+                        <img src="images/lightroomlogo.png"> 
+                    </li>
+                    
+                    <li> 
+                        DaVinci Resolve
+                        <img src="images/davincilogo.png">
+                    </li>
+                     
+                </ul>
+            </div>
+            
+            <div class="div-slide">
+                <h2> Services</h2> <br>
+                <!--photo-->
+                    <a href="works.html#photos"><h3 class="service1"> Photography</h3></a>
+                    <p> Want to capture different moments in your life?
+                        Then, you've come to the right place.
+                        Events, portraits, media coverage;
+                        We'll make you memories you'll never forget!
+                    </p>
+                
+                
+            </div>
+
+            <div class="div-slide">
+                <h2> Services</h2> <br>
+                <!--graphics-->
+
+
+                    <a href="works.html#graphic"><h3 class="service1"> Graphic Design</h3></a>
+                    <p> Posters, banners, social media graphics, and more! 
+                        I can provide you what your imaginative mind wants. 
+                        Let's turn your ideas into designs! 
+                    </p>
+                
+                
+            </div>
+
+            <div class="div-slide">
+                <h2> Services</h2> <br>
+                <!--film and video-->
+              
+
+                    <a href="works.html#film"><h3 class="service1"> Film and Videos</h3></a>
+                    <p> Have video projects you want to create? 
+                        From advertisements, reels, youtube videos, to short-films! 
+                        Let's put it on video and make it a reality.
+                    </p>
+               
+                
+            </div>
+
+            
+        </div>
+            <div class="slider-controls">
+                <button id="prev-btn" class="slider-btn">❮ Previous</button>
+                <button id="next-btn" class="slider-btn">Next ❯</button>
+            </div>
+        </div>
+
+    <div class="my-image">
+        <img src="images/ME.jpg" class="my-img"> 
+    </div>
+
+</section>
+
+<!-- SECTION SLIDE SCRIPT-->
+<script> 
+   document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".div-slide");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+
+    // Function to update the active slide and button visibility
+    const updateSlide = () => {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("active", index === currentIndex);
+        });
+
+        // Hide the "Previous" button if we're at the first slide
+        prevBtn.style.visibility = currentIndex === 0 ? "hidden" : "visible";
+
+        // Hide the "Next" button if we're at the last slide
+        nextBtn.style.visibility = currentIndex === slides.length - 1 ? "hidden" : "visible";
+    };
+
+    // Next button event
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+        updateSlide();
+    });
+
+    // Previous button event
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Loop back to the last slide
+        updateSlide();
+    });
+
+    // Initialize the slider
+    updateSlide();
+});
+
+</script>
+
+<!--FOOTER-->
+<footer>
+    <div class="socials"> 
+        <a href="https://www.facebook.com/gamerzonebewareplz" target="_blank"><img src="images/facebooklogo.png"></a>
+        <a href="https://www.instagram.com/otakuarrives" target="_blank"><img src="images/instagramlogo.png"></a>
+        <a href="https://www.linkedin.com/in/charles-marco-hernandez-337239366/" target="_blank"><img src="images/linkedinlogo.png"></a>
+    </div>
+    <p>© 2024 Portfolio by Ota. All rights reserved.</p>
+</footer>
+
+
+<!--Back to Top Button-->
+<div>
+<button class="backtop"> ⤒ </button> 
+</div>
+<script>
+const backToTopBtn = document.querySelector('.backtop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

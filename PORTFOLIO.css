@@ -1,0 +1,501 @@
+/* NORMAL VIEW */
+html { 
+    scroll-behavior: smooth;
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    font-family: Parkinsans, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, #800000, #000000);
+    overflow: auto;
+    height: 100%;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100; /* Above the menu */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Dropdown Menu for Small Screens */
+
+.menu.hidden {
+    display: none; /* Hide menu by default for small screens */
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        padding: 20px;
+        display: none; /* Hide by default */
+    }
+
+    .menu.visible {
+        display: flex; /* Show when toggled */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 30px; /* Show hamburger icon for smaller screens */
+    }
+}
+
+/* Transition for Dropdown */
+.menu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* HEADER */
+header {
+    color: #fff;
+    background-color:#000000;
+    padding: 20px 0;
+    position: sticky; /* Makes the header stick to the top of the viewport */
+    top: 0; 
+    z-index: 1000; /* Keeps the header above other elements */
+    box-shadow: 0 4px 6px #3d0a0a1a; 
+    transition: all .45s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: left;
+}
+
+/* NAV */ 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 { 
+    padding: 10px 30px;
+    background: none;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.headbutton { 
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+}
+
+.headbutton:hover{ 
+    transform: scale(1.05);
+    cursor:pointer;
+    color: #d33434;
+    
+}
+
+nav ul li { 
+    background:none ;
+    cursor:pointer;
+    list-style: none;
+    display: inline-block;
+    align-content: right;
+    margin: 10px 50px;
+}
+nav ul li a {
+    text-decoration: none;
+    border: none;
+    color:#ffffff;
+    transition: transform 0.3s, box-shadow 0s;
+}
+
+nav ul li a:hover {
+    padding: 10px;
+    border-radius: 20px;
+    transform: scale(3px);
+    background-color: #d33434;
+    backdrop-filter: blur(40px);
+    box-shadow: 0px 0px 20px 5px #df8a8a;
+}
+
+/* GALLERY */
+.gallery-container { 
+    overflow: hidden;
+    width: 100%; /* Adjust width as needed */
+    position: relative;
+    background-color: none;
+}
+.gallery {
+    
+    display: flex;
+    
+}
+
+.gallery-track { 
+    display:flex;
+    animation: scroll-gallery 9s linear infinite;
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
+}
+.gallery img {
+    width: auto;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes scroll-gallery {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ABOUT ME */
+
+#about { 
+    background-color: #0000008c;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 50px;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    justify-items: center;
+}
+
+#about .mainhead { 
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 2rem;
+    
+}
+
+.about .my-image { 
+    grid-column: 2 / 3;
+    display: flex;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    
+}
+#about .my-image .my-img { 
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0px 0px 100px rgba(99, 25, 25, 0.725);
+}
+
+.contactbutton { 
+    padding: 10px 20px;
+    justify-self: center;
+    background: #d33434;
+    border-radius: 20px;
+    width: 70px;
+    height: 20px;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    align-self: center;
+}
+
+.contactbutton:hover {
+    transform: scale(1.05);
+    cursor:pointer;
+    box-shadow: 0px 0px 20px 5px #df8a8a;
+}
+.contactbtn { 
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    
+}
+
+.hello {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    grid-column: 1 / 2;
+}
+
+.div-slider {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+
+.div-slide {
+    display: none;
+    padding: 20px;
+    height: 100%;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.div-slide.active {
+    display: block;
+}
+/* I AM A */ 
+
+.iam { 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-weight:bold;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.iam li { 
+    margin: 10px 0;
+}
+.skill { 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+}
+.skill li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px 10px 0px 0px;
+}
+
+.skill img { 
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    
+}
+
+/* SERVICES */ 
+.service1 { 
+    text-decoration: underline;
+    color: white;
+}
+
+.service1:hover{
+    color: #d33434;
+}
+
+
+/* Buttons */ 
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-content: center;
+}
+
+.slider-btn {
+    background: #7a7a7a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: #e0745f;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* BACK TO TOP BUTTON */
+.backtop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    scroll-behavior: smooth;
+    transition: ease-in;
+}
+
+/* FOOTER */ 
+footer {
+    text-align: center;
+    background-color: var(--accent-color);
+    color: #d8d8d8;
+    padding: 10px 0;
+    font-size: 0.9em;
+    position: relative;
+}
+.socials img { 
+    filter:grayscale(100%)
+    
+}
+
+.socials img:hover {
+    filter:grayscale(0%);
+    transform: scale(1.5);
+    transition: .3s ease;
+}
+
+/* RESPONSIVE CHUCHU */ 
+
+/* DIV */ 
+/* FOR TABLETS */
+@media screen and (max-width: 768px) {
+    #about {
+        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-rows: auto auto; /* Adjust rows for stacking */
+        gap: 10px; /* Reduce gap for smaller screens */
+        text-align: center; /* Center-align all content */
+    }
+
+    /* Heading spans the full width */
+    #about .mainhead {
+        font-size: 1.8rem; /* Slightly smaller font */
+        padding: 15px;
+    }
+
+    /* Text slider takes full width */
+    .hello, .my-image {
+        grid-column: 1 / -1; /* Ensure it spans full width */
+
+    }
+
+    /* Image takes full width */
+    .my-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .my-image .my-img {
+        max-width: 80%; /* Reduce image size */
+        max-height: 80%; /* Maintain aspect ratio */
+    }
+    .gallery img {
+        height: 400px; /* Further reduce size */
+        width: auto;
+        margin-right: 15px; /* Adjust spacing */
+    }
+}
+
+
+
+/* FOR PHONES */
+@media screen and (max-width: 480px) {
+    /* Further tweaks for very small screens */
+    #about .mainhead {
+        font-size: 1.5rem; /* Smaller heading font */
+    }
+
+    .my-image .my-img {
+        max-width: 100%; /* Image takes full width */
+        max-height: auto;
+    }
+
+    .slider-btn {
+        font-size: 0.9rem; /* Smaller button text */
+        padding: 8px 16px; /* Adjust button size */
+    }
+    .div-slide {
+        padding-bottom: 20px;
+        font-size: 0.8rem;
+    }
+
+    .contactbtn {
+            margin-top: 20px; /* Add spacing between button and other elements */
+            text-align: center; /* Center-align button on smaller screens */
+        }
+    
+        
+    .slider-btn {
+            position: relative; /* Ensure no unexpected overlapping */
+            
+        }
+        .gallery img {
+            height: 400px; /* Further reduce size */
+            width: auto;
+            margin-right: 10px; /* Minimal spacing */
+        }
+    }
+
+
+/* FOR CONTACT BUTTON */
+/* Fix overlapping on smaller screens */
+@media screen and (max-width: 768px) {
+    .contactbtn {
+        margin-top: 20px; /* Add spacing between button and other elements */
+        text-align: center; /* Center-align button on smaller screens */
+        z-index: 10;
+    }
+
+    
+    .slider-btn {
+        position: relative; /* Ensure no unexpected overlapping */
+        
+    }
+}
+

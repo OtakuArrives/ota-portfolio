@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works</title>
+    <link rel="stylesheet" href="works.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+    
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("visible");
+        });
+    });
+    
+        </script> 
+    <!--HEADING AND NAVI BUTTONS-->
+    <header>
+        <nav>
+            <a href="index.html" class="headbutton"><h1>Ota</h1></a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="#"> Works </a></li>
+                <li><a href="index.html#about"> About Me </a></li>
+                <li><a href="contact.html"> Contact </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--INTRO-->
+    <div class="intro"> 
+        <hr> 
+        <h1> My Works</h1>
+        <div class="workslink">
+            <a href="#photos"> Photography</a>
+            <a href="#graphic"> Graphic Design</a>
+            <a href="#film"> Film and Video</a>
+        </div>
+    </div>
+
+
+    <!--PHOTOGRAPHY SECTION-->
+    <div id="photos"> 
+        <h1> Photography </h1>
+    
+        <!--GALLERY/MODAL-->
+        <div class="gallery">
+            <img src="images/works/photos/Split.jpg" alt="Photo 1">
+            <img src="images/works/photos/Bird.png" alt="Photo 2">
+            <img src="images/works/photos/2Light.png" alt="Photo 3">
+            <img src="images/works/photos/tiger.jpg" alt="Photo 4">
+            <img src="images/works/photos/slow.jpg" alt="Photo 5">
+            <img src="images/works/photos/reptile.jpg" alt="Photo 6">
+        </div>
+    
+        <div class="modal" id="modal">
+            <span class="close">&times;</span>
+            <img src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <!--GRAPHIC SECTION-->
+    <div id="graphic"> 
+        <h1> Graphic Design </h1>
+    
+        <!--GALLERY/MODAL-->
+        <div class="gallery">
+            <img src="images/works/graphic/DAWG Productions.png" alt="Photo 1">
+            <img src="images/works/graphic/Suisei.png" alt="Photo 2">
+            <img src="images/works/graphic/daredevil.png" alt="Photo 3">
+            <img src="images/works/graphic/circus.png" alt="Photo 4">
+            <img src="images/works/graphic/cover.png" alt="Photo 5">
+            <img src="images/works/graphic/Announcement.png" alt="Photo 6">
+        </div>
+    
+        <div class="modal" id="modal">
+            <span class="close">&times;</span>
+            <img src="" alt="Modal Image">
+        </div>
+    </div>
+
+    <!--FILM SECTION-->
+    <div id="film"> 
+        <h1> Film and Video </h1>
+        <div id="film"> 
+            <div class="video-slider-container">
+                <div class="video-slider">
+                    <!-- Slide 1 
+                    
+                    <div class="video-slide active">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb1.png" alt="Thumbnail 1" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video1.mp4" controls></video>
+                        </div>
+                    </div>
+                    
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb2.png" alt="Thumbnail 2" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video2.mp4" controls></video>
+                        </div>
+                    </div>
+                    
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb3.png" alt="Thumbnail 3" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video3.mp4" controls></video>
+                        </div>
+                    </div>
+
+                -->
+                    <!-- Slide 4 -->
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb4.png" alt="Thumbnail 4" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video4.mp4" controls></video>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb6.png" alt="Thumbnail 6" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video6.mp4" controls></video>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Slide 7 -->
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb7.png" alt="Thumbnail 7" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video7.mp4" controls></video>
+                        </div>
+                    </div>
+
+                    <div class="video-slide">
+                        <div class="video-wrapper">
+                            <img src="videos/Thumb8.png" alt="Thumbnail 8" class="video-thumbnail">
+                            <button class="play-btn" aria-label="Play Video">▶</button>
+                            <video src="videos/Video8.mp4" controls></video>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <button class="prev-btn">❮ </button>
+                <button class="next-btn"> ❯</button>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".video-slide");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const videos = document.querySelectorAll(".video-wrapper video");
+        const playButtons = document.querySelectorAll(".play-btn");
+        const thumbnails = document.querySelectorAll(".video-thumbnail");
+    
+        let currentIndex = 0;
+    
+        // Function to update the active slide and pause inactive videos
+        const updateSlides = () => {
+            slides.forEach((slide, index) => {
+                const video = slide.querySelector("video");
+                const thumbnail = slide.querySelector(".video-thumbnail");
+                const playButton = slide.querySelector(".play-btn");
+    
+                // Toggle active class
+                slide.classList.toggle("active", index === currentIndex);
+    
+                if (index === currentIndex) {
+                    // Show thumbnail and play button when active
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.display = "none";
+                    thumbnail.style.display = "block";
+                    playButton.style.display = "block";
+                } else {
+                    // Pause videos in inactive slides
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.display = "none";
+                    thumbnail.style.display = "block";
+                    playButton.style.display = "block";
+                }
+            });
+        };
+    
+        // Event listener for play button
+        playButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                const video = slides[index].querySelector("video");
+                const thumbnail = slides[index].querySelector(".video-thumbnail");
+    
+                video.style.display = "block";
+                thumbnail.style.display = "none";
+                button.style.display = "none";
+                video.play();
+            });
+        });
+    
+        // Event listener for the next button
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+            updateSlides();
+        });
+    
+        // Event listener for the previous button
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Loop back to the last slide
+            updateSlides();
+        });
+    
+        // Initialize the slider
+        updateSlides();
+    });
+    </script>
+
+<!-- script -->
+<script>
+    // Modal functionality
+    const modal = document.getElementById('modal');
+    const modalImg = modal.querySelector('img');
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const closeModal = modal.querySelector('.close');
+
+    galleryImgs.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+</script>
+
+<!--BACK TO TOP-->
+<!--Back to Top Button-->
+<!--FOOTER-->
+<footer>
+    <div class="socials"> 
+        <a href="https://www.facebook.com/gamerzonebewareplz" target="_blank"><img src="images/facebooklogo.png"></a>
+        <a href="https://www.instagram.com/otakuarrives" target="_blank"><img src="images/instagramlogo.png"></a>
+        <a href="https://www.linkedin.com/in/charles-marco-hernandez-337239366/" target="_blank"><img src="images/linkedinlogo.png"></a>
+    </div>
+    <p>© 2024 Portfolio by Ota. All rights reserved.</p>
+</footer>
+
+
+<!--Back to Top Button-->
+<div>
+<button class="backtop"> ⤒ </button> 
+</div>
+<script>
+const backToTopBtn = document.querySelector('.backtop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

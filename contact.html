@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+    
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("visible");
+        });
+    });
+    
+        </script> 
+    <!--HEADING AND NAVI BUTTONS-->
+    <header>
+        <nav>
+            <a href="index.html" class="headbutton"><h1>Ota</h1></a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="works.html"> Works </a></li>
+                <li><a href="index.html#about"> About Me </a></li>
+                <li><a href="#"> Contact </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form-container">
+        <h1>Contact Me</h1>
+        <form id="contactForm">
+            <input type="hidden" name="access_key" value="5597d5f0-5140-4099-bff4-ac89df01147c">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <small class="error-message"></small>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <small class="error-message"></small>
+            </div>
+            <!-- Message -->
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+                <small class="error-message"></small>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="success-message" style="display:none;">
+            Thank you for contacting me! I'll get back to you soon.
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactForm = document.getElementById("contactForm");
+            const successMessage = document.querySelector(".success-message");
+    
+            contactForm.addEventListener("submit", (e) => {
+                e.preventDefault();  // Prevent default form submission
+    
+                let isValid = validateForm();
+    
+                if (isValid) {
+                    // Prepare form data
+                    const formData = new FormData(contactForm);
+    
+                    // Submit the form using fetch to Web3Forms
+                    fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Reset form and show success message
+                            contactForm.reset();
+                            successMessage.style.display = "block";
+                        } else {
+                            // Handle failure (show an error message)
+                            alert("There was an error submitting the form.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        alert("An unexpected error occurred.");
+                    });
+                }
+            });
+    
+            const validateForm = () => {
+                let isValid = true;
+                const fields = ["name", "email", "message"];
+                fields.forEach((field) => {
+                    const input = document.getElementById(field);
+                    const errorMessage = input.nextElementSibling;
+    
+                    if (!input.value.trim()) {
+                        errorMessage.textContent = `${field} is required.`;
+                        errorMessage.style.display = "block";
+                        isValid = false;
+                    } else {
+                        errorMessage.textContent = "";
+                        errorMessage.style.display = "none";
+                    }
+    
+                    if (field === "email" && !validateEmail(input.value)) {
+                        errorMessage.textContent = `Invalid email format.`;
+                        errorMessage.style.display = "block";
+                        isValid = false;
+                    }
+                });
+    
+                return isValid;
+            };
+    
+            const validateEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            };
+        });
+    </script>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="socials"> 
+            <a href="https://www.facebook.com/gamerzonebewareplz" target="_blank"><img src="images/facebooklogo.png"></a>
+            <a href="https://www.instagram.com/otakuarrives" target="_blank"><img src="images/instagramlogo.png"></a>
+            <a href="https://www.linkedin.com/in/charles-marco-hernandez-337239366/" target="_blank"><img src="images/linkedinlogo.png"></a>
+        </div>
+        <p>© 2024 Portfolio by Ota. All rights reserved.</p>
+    </footer>
+</body>
+</html>
